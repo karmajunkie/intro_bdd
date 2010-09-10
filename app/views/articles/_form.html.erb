@@ -1,0 +1,14 @@
+<%= form_for article do |f| %>
+  <ul>
+    <li>
+      <%= f.label :title %>  
+      <%= f.text_field :title %>
+    </li>
+    <li>
+      <%= f.label :body %>  
+      <%= f.text_field :body %>
+    </li>
+  </ul>
+
+  <%= f.submit "Submit" %>
+<% end %>

@@ -1,6 +1,6 @@
 <h1>My Blog</h1>
 <div id='articles'>
-  <%= @articles.each do |article| %>
+  <% @articles.each do |article| %>
     <article>
       <h2><%= link_to article.title, article %></h2>
     </article>
