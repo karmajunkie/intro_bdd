@@ -8,7 +8,20 @@
 </head>
 <body>
 
-<%= yield %>
+  <nav>
+    <ul>
+      <li><%= link_to "New post", new_article_path %></li>
+    </ul>
+  </nav>
+  <%= [:notice, :error].each do |flashtype| %>
+    <div class='<%= flashtype %>'>
+      <%= flash[flashtype] %>
+    </div>
+  <% end %>
+  
+  <div id='content'>
+    <%= yield %>
+  </div>
 
 </body>
 </html>
