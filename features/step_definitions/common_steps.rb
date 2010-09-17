@@ -1,9 +1,9 @@
-Given /^I am logged in as "([^\"]*)"$/ do |email|
+When /^I log in as "([^"]*)"$/ do |email|
   Given %|I am on the homepage|
-  When %|I follow "Log in"|
+  When %|I follow "Sign in"|
   When %|I fill in "Email" with "#{email}"|
   When %|I fill in "Password" with "password"|
-  When %|I press "Log in"|
+  When %|I press "Sign in"|
 end
 
 Then /^I should see awesome rounded corners$/ do

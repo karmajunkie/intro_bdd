@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.0'
+gem "devise", "1.1.2"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -32,6 +33,7 @@ group :test, :development do
   gem "rspec-rails", "= 2.0.0.beta.20"
   gem "shoulda"
   gem "factory_girl_rails"
+  gem "email_spec"
 end
 
 group :cucumber do
@@ -44,4 +46,5 @@ group :cucumber do
   gem 'launchy'    # So you can do Then show me the page
   gem "factory_girl_rails"
   gem "ruby-debug"
+  gem "email_spec"
 end

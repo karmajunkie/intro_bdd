@@ -4,7 +4,10 @@ Feature: Posting a new article
   I want to post new articles
 
   Scenario: Posting an article
-    Given I am on the home page
+    Given the following confirmed user exists:
+      | Email            |
+      | user@example.com |
+    When I log in as "user@example.com"
     When I follow "New post"
     Then I should be on the new article page
      And I should see "New Article"

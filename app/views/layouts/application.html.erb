@@ -7,12 +7,24 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-
-  <nav>
-    <ul>
-      <li><%= link_to "New post", new_article_path %></li>
-    </ul>
-  </nav>
+  <header>
+    <% if user_signed_in? %>
+      <h2>Welcome <%= current_user.email %></h2>
+      <nav>
+        <ul>
+          <li><%= link_to "Sign out", user_session_path, :method => :delete %></li>
+          <li><%= link_to "New post", new_article_path %></li>
+        </ul>
+      </nav>
+    <% else %>
+      <nav>
+        <ul>
+          <li><%= link_to "Sign up", new_user_registration_path%></li>
+          <li><%= link_to "Sign in", new_user_session_path %></li>
+        </ul>
+      </nav>
+    <% end %>
+  </header>
   <% [:notice, :error].each do |flashtype| %>
     <div class='<%= flashtype %>'>
       <%= flash[flashtype] %>
