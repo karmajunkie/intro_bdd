@@ -3,6 +3,7 @@
   <% @articles.each do |article| %>
     <article>
       <h2 class='rounded'><%= link_to article.title, article %></h2>
+      <h3 class='author'><%= article.user.email %></h3>
     </article>
   <% end %>
 </div>

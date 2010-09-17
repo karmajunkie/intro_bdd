@@ -19,3 +19,9 @@ Feature: Posting a new article
     Then I should be on the home page
      And I should see "New article created"
      And I should see "Some title"
+
+  Scenario: Maliciously posting an article
+    When I go to the new article page
+    Then I should see "Sign in"
+    And I should be on the new user session page
+
